@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/camera_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_post_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black">
+
+        <TextView
+            android:id="@+id/tv_post_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"
+            android:padding="5dp"
+            android:text="@string/photo_str"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"/>
+
+        <Button
+            android:id="@+id/bt_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:stateListAnimator="@null"
+            android:text="@string/next_str"
+            android:textColor="@android:color/white"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_content_select_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/black"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/bt_library"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:stateListAnimator="@null"
+            android:text="@string/library_str"
+            android:textColor="@color/deactive_text_color"/>
+
+        <Button
+            android:id="@+id/bt_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/content_bar_color"
+            android:stateListAnimator="@null"
+            android:text="@string/photo_str"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/bt_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:stateListAnimator="@null"
+            android:text="@string/video_str"
+            android:textColor="@color/deactive_text_color"/>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_rec_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ll_content_select_bar"
+        android:background="@color/content_bar_color">
+
+        <ImageView
+            android:id="@+id/iv_flash"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:clickable="true"
+            android:padding="5dp"
+            android:src="@drawable/flash_off"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/iv_front"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:clickable="true"
+            android:padding="5dp"
+            android:src="@drawable/camera"
+            android:visibility="gone"/>
+
+
+        <ImageView
+            android:id="@+id/iv_rec"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:src="@drawable/rec_icon"/>
+
+    </RelativeLayout>
+
+
+    <ProgressBar
+        android:id="@+id/pb_video"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_below="@id/rl_post_top_bar"/>
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+
+</RelativeLayout>
